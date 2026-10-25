@@ -15,6 +15,18 @@ else
     echo "$ip: dirección PUBLICA"    # Dirección PÚBLICA
 fi
 
+
+# Para representar el rango 172.16 a 172.31 he utilizado
+# una alternancia dentro de una sola expresión regular:
+# (1[6-9]|2[0-9]|3[01])
+# 1[6-9] representa los números del 16 al 19,
+# 2[0-9] representa los números del 20 al 29,
+# y 3[01] representa el 30 y el 31.
+# Así cubro todo el rango del segundo octeto del 16 al 31.
+
+
+
+
 # DIRECCION LOOBPACK 127.
 # La expresión ^127\. significa que la dirección debe comenzar por 127, por ejemplo 127.0.0.0.1
 # ^: principio del texto.

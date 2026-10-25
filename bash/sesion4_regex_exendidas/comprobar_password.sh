@@ -65,6 +65,7 @@ fi
 # usamos [^a-zA-Z0-9] para considerar símbolo cualquier carácter que no sea una letra inglesa ni un número. Esto también incluye espacios y algunos caracteres acentuados
 
 # 5. Comprobar que la contraseña no aparece en el diccionario español
+
 if grep -iwq "$password" /usr/share/dict/spanish; then
     segura=0
     echo "ERROR: La contraseña aparece en el diccionario"
@@ -72,7 +73,7 @@ else
     echo "OK: La contraseña no aparece en el diccionario"
 fi
 
-#¿Qué significa cada opción de grep?
+# Opciones de grep
 # -i: ignora las diferencias entre mayúsculas y minúsculas.
 # -w: busca la palabra completa.
 # -q: no muestra el texto encontrado; solo devuelve el resultado de la búsqueda.
@@ -84,3 +85,9 @@ if [[ $segura -eq 1 ]]; then
 else
     echo "RESULTADO: CONTRASEÑA NO SEGURA"
 fi
+
+# Aunque Caminas2026! cumple todas las condiciones del ejercicio,
+# no la considero una contraseña totalmente segura.
+# Contiene una palabra reconocible, un año y un símbolo, por lo que
+# podría ser más fácil de adivinar. Es preferible utilizar una contraseña
+# larga, única y aleatoria, o una frase de contraseña difícil de predecir.
